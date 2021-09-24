@@ -11,8 +11,11 @@ public class BubbleSort {
         List<Integer> items = new Random().ints(100, 0, 200).boxed()
                 .collect(Collectors.toList());
 
+        long numberOfIterations = 0;
+
         for (int i = 0; i < items.size(); i++) {
             for (int j = items.size() - 1; j > i; j--) {
+                numberOfIterations++;
                 if (items.get(j) < items.get(j - 1)) {
                     Collections.swap(items, j, j - 1);
                 }
@@ -20,5 +23,6 @@ public class BubbleSort {
         }
 
         System.out.println(items);
+        System.out.println(numberOfIterations);
     }
 }

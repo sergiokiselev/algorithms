@@ -11,9 +11,11 @@ public class InsertionSort {
         List<Integer> items = new Random().ints(100, 1, 200)
                 .boxed().collect(Collectors.toList());
         System.out.println(items);
+        int numOfIterations = 0;
 
         for (int i = 1; i < items.size(); i++) {
             for (int j = i; j > 0; j--) {
+                numOfIterations++;
                 if (items.get(j) > items.get(j - 1)) {
                     Collections.swap(items, j, j - 1);
                 }
@@ -21,5 +23,6 @@ public class InsertionSort {
         }
 
         System.out.println(items);
+        System.out.println(numOfIterations);
     }
 }

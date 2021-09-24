@@ -13,6 +13,7 @@ public class InsertionSortDichotomy {
 
         System.out.println(items);
 
+        int numOfIterations = 0;
         int l, r, m;
         for (int i = 0; i < items.size(); i++) {
             r = i;
@@ -28,11 +29,13 @@ public class InsertionSortDichotomy {
             System.out.println(r);
             int x = items.get(i);
             for (int j = i; j > r; j--) {
+                numOfIterations++;
                 Collections.swap(items, j, j - 1);
             }
             items.set(r, x);
         }
         System.out.println(items);
+        System.out.println(numOfIterations);
     }
 }
 
