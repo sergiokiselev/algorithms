@@ -1,18 +1,15 @@
 package algo.sort;
 
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
+
+import static algo.sort.Util.getItemsToSort;
 
 public class SelectionSort {
 
     private static int numOfIterations = 0;
 
     public static void main(String[] args) {
-        List<Integer> items = new Random()
-                .ints(100, 0, 200).boxed()
-                .collect(Collectors.toList());
-                // .toArray(Integer[]::new);
+        List<Integer> items = getItemsToSort(100);
         for (int i = 0; i < items.size(); i++) {
             int max = findMax(items, i);
             System.out.println(items.get(max));

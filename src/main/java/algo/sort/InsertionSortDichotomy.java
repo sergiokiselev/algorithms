@@ -2,14 +2,13 @@ package algo.sort;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
+
+import static algo.sort.Util.getItemsToSort;
 
 public class InsertionSortDichotomy {
 
     public static void main(String[] args) {
-        List<Integer> items = ThreadLocalRandom.current().ints(100, 0, 200)
-                .boxed().collect(Collectors.toList());
+        List<Integer> items = getItemsToSort(100);
 
         System.out.println(items);
 

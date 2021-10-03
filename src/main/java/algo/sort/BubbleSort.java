@@ -2,14 +2,13 @@ package algo.sort;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-import java.util.stream.Collectors;
+
+import static algo.sort.Util.getItemsToSort;
 
 public class BubbleSort {
 
     public static void main(String[] args) {
-        List<Integer> items = new Random().ints(100, 0, 200).boxed()
-                .collect(Collectors.toList());
+        List<Integer> items = getItemsToSort(100);
 
         long numberOfIterations = 0;
 
